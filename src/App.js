@@ -26,18 +26,26 @@ function App() {
   //   };
   //------Ejercicio 1 a 5------
 
+  const existCharacter = (id) => {
+    return characters.some((character) => character.id === Number(id));
+  };
+
   const onSearch = (id) => {
-    //function onSearch(id) {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
-      //id es mi estado local que el usuario escribe en el input
-      ({ data }) => {
-        if (data.name) {
-          setCharacter((oldChars) => [...oldChars, data]);
-        } else {
-          alert("¡No hay personajes con este ID!");
+    if (!existCharacter(id) || characters.length === 0) {
+      //function onSearch(id) {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+        //id es mi estado local que el usuario escribe en el input
+        ({ data }) => {
+          if (data.name) {
+            setCharacter((oldChars) => [...oldChars, data]);
+          } else {
+            alert("¡No hay personajes con este ID!");
+          }
         }
-      }
-    );
+      );
+    } else {
+      alert("El personaje ya se esta mostrando");
+    }
   };
 
   const onClose = (id) => {
@@ -47,9 +55,33 @@ function App() {
     setCharacter(filteredCharacters);
   };
 
+  const handleAddRandomCharacter = async () => {
+    try {
+      const response = await axios("https://rickandmortyapi.com/api/character");
+      const randomCharacter =
+        response.data.results[
+          Math.floor(Math.random() * response.data.results.length)
+        ];
+      onAddRandomCharacter(randomCharacter);
+    } catch (error) {
+      alert("Error fetching random character. Please try again later.");
+    }
+  };
+
+  const onAddRandomCharacter = (randomCharacter) => {
+    if (!existCharacter(randomCharacter.id)) {
+      setCharacter((oldChars) => [...oldChars, randomCharacter]);
+    } else {
+      alert("El personaje ya se está mostrando");
+    }
+  };
+
   return (
     <div className="App">
-      <Nav onSearch={onSearch} />
+      <Nav
+        onSearch={onSearch}
+        onAddRandomCharacter={handleAddRandomCharacter}
+      />
       <Cards characters={characters} onClose={onClose} />
     </div>
   );

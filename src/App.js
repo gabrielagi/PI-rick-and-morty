@@ -40,10 +40,17 @@ function App() {
     );
   };
 
+  const onClose = (id) => {
+    const filteredCharacters = characters.filter(
+      (character) => character.id !== Number(id)
+    );
+    setCharacter(filteredCharacters);
+  };
+
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <Cards characters={characters} />
+      <Cards characters={characters} onClose={onClose} />
     </div>
   );
 }

@@ -1,8 +1,15 @@
 import "./App.css";
 import Cards from "./components/Cards.jsx";
+import Detail from "./components/Detail";
 import Nav from "./components/Nav";
 import { useState } from "react";
 import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+import About from "./components/About";
+
+//const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
+const URL_BASE = "https://rym2-production.up.railway.app/api/character";
+const API_KEY = "henrym-gabrielagi";
 
 function App() {
   const [characters, setCharacter] = useState([]);
@@ -33,7 +40,7 @@ function App() {
   const onSearch = (id) => {
     if (!existCharacter(id) || characters.length === 0) {
       //function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+      axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(
         //id es mi estado local que el usuario escribe en el input
         ({ data }) => {
           if (data.name) {
@@ -55,17 +62,16 @@ function App() {
     setCharacter(filteredCharacters);
   };
 
-  const handleAddRandomCharacter = async () => {
-    try {
-      const response = await axios("https://rickandmortyapi.com/api/character");
-      const randomCharacter =
-        response.data.results[
-          Math.floor(Math.random() * response.data.results.length)
-        ];
-      onAddRandomCharacter(randomCharacter);
-    } catch (error) {
-      alert("Error fetching random character. Please try again later.");
-    }
+  const handleAddRandomCharacter = () => {
+    axios("https://rickandmortyapi.com/api/character")
+      .then(({ data }) => {
+        const randomCharacter =
+          data.results[Math.floor(Math.random() * data.results.length)];
+        onAddRandomCharacter(randomCharacter);
+      })
+      .catch((error) => {
+        alert("Error fetching random character. Please try again later.");
+      });
   };
 
   const onAddRandomCharacter = (randomCharacter) => {
@@ -82,7 +88,18 @@ function App() {
         onSearch={onSearch}
         onAddRandomCharacter={handleAddRandomCharacter}
       />
-      <Cards characters={characters} onClose={onClose} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route
+          path="/home"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
     </div>
   );
 }

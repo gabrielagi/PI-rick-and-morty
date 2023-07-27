@@ -1,12 +1,15 @@
 import "./App.css";
-import Cards from "./components/Cards.jsx";
+import Cards from "./components/Cards/Cards.jsx";
 import Detail from "./components/Detail";
 import Nav from "./components/Nav";
 import { useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
-import About from "./components/About";
-import Error404 from "./components/Error404";
+import About from "./components/About/About";
+import Error404 from "./components/Error404/Error404";
+import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
+import { GlobalStyle, theme } from "./RYMBackground.styled-component"
+
 
 //const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
 const URL_BASE = "https://rym2-production.up.railway.app/api/character";
@@ -84,25 +87,28 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Nav
-        onSearch={onSearch}
-        onAddRandomCharacter={handleAddRandomCharacter}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={<Cards characters={characters} onClose={onClose} />}
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div className="App">
+        <Nav
+          onSearch={onSearch}
+          onAddRandomCharacter={handleAddRandomCharacter}
         />
-        <Route
-          path="/home"
-          element={<Cards characters={characters} onClose={onClose} />}
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route
+            path="/"
+            element={<Cards characters={characters} onClose={onClose} />}
+          />
+          <Route
+            path="/home"
+            element={<Cards characters={characters} onClose={onClose} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 export default App;

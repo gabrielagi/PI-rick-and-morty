@@ -7,10 +7,11 @@ export const CardWrapper = styled.div`
   margin: 10px;
   border-radius: 8px;
   width: 250px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
 `;
 
 export const CloseButton = styled.button`
-  background-color: transparent;
+  background-color: red;
   color: #ffffff;
   border: none;
   cursor: pointer;

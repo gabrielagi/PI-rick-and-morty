@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/About";
+import Error404 from "./components/Error404";
 
 //const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
 const URL_BASE = "https://rym2-production.up.railway.app/api/character";
@@ -99,6 +100,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );

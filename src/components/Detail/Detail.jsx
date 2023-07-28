@@ -7,6 +7,10 @@ import {
   DetailCard,
   DetailInfo,
   DetailImage,
+  TitleWrapper,
+  AttributeWrapper,
+  AttributeTitle,
+  AttributeValue,
 } from "./Detail.styled-component";
 
 const Detail = () => {
@@ -25,18 +29,26 @@ const Detail = () => {
     return setCharacter({});
   }, [id]);
 
-  return (
+   return (
     <DetailContainer>
-      {character && (
+      {character.name && (
         <DetailCard>
+          <DetailImage src={character.image} alt="" />
           <DetailInfo>
-            <h2>{character.name}</h2>
-            <h2>{character.status}</h2>
-            <h2>{character.species}</h2>
+            <TitleWrapper>
+              <h2>Name: {character.name}</h2>
+            </TitleWrapper>
+            <AttributeWrapper>
+              <AttributeTitle>Specie:</AttributeTitle>
+              <AttributeValue>{character.species}</AttributeValue>
+            </AttributeWrapper>
+            <AttributeWrapper>
+              <AttributeTitle>Status:</AttributeTitle>
+              <AttributeValue>{character.status}</AttributeValue>
+            </AttributeWrapper>
             <h2>{character.gender}</h2>
             <h2>{character.origin && character.origin.name}</h2>
           </DetailInfo>
-          <DetailImage src={character.image} alt="" />
         </DetailCard>
       )}
     </DetailContainer>
@@ -44,3 +56,4 @@ const Detail = () => {
 };
 
 export default Detail;
+

@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Error404 from "./components/Error404/Error404";
 import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
 import { GlobalStyle, theme } from "./RYMBackground.styled-component";
+import portalGif from "./assets/portal-rick-and-morty.gif";
 
 //const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
 const URL_BASE = "https://rym2-production.up.railway.app/api/character";
@@ -88,6 +89,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <img id="portal-gif" src={portalGif} alt="Portal GIF" />
       <div className="App">
         <Nav
           onSearch={onSearch}

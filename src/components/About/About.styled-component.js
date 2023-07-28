@@ -18,6 +18,11 @@ export const ProfileInfo = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 600px;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    max-width: 400px;
+  }
 `;
 
 export const GifWrapper = styled.div`
@@ -26,7 +31,7 @@ export const GifWrapper = styled.div`
   margin-top: 20px;
 `;
 
-export const Gif = styled.img`
+export const Icon = styled.img`
   width: 30px;
   height: 30px;
   margin: 10px;

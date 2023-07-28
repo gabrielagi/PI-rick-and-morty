@@ -4,11 +4,9 @@ import {
   ProfileInfo,
   ProfileImage,
   GifWrapper,
-  Gif,
+  Icon,
   LinksList,
 } from "./About.styled-component";
-
-import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -27,7 +25,7 @@ const About = () => {
           estética en cada proyecto.
         </p>
         <GifWrapper>
-          {/* <Gif
+          {/* <Icon
             src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif"
             alt="Gif 1"
           /> */}
@@ -35,25 +33,25 @@ const About = () => {
         </GifWrapper>
         <LinksList>
           <a href="https://github.com/gabrielagi">
-            <Gif
+            <Icon
               src="https://www.svgrepo.com/show/512317/github-142.svg"
               alt="Github"
             />
           </a>
           <a href="https://www.linkedin.com/in/gabriela-iriart/">
-            <Gif
+            <Icon
               src="https://www.svgrepo.com/show/521725/linkedin.svg"
               alt="LinkedIn"
             />
           </a>
           <a href="https://www.behance.net/gabrielairiart">
-            <Gif
+            <Icon
               src="https://www.svgrepo.com/show/15898/behance.svg"
               alt="Behance"
             />
           </a>
-          <a href="https://www.linkedin.com/in/gabriela-iriart/">
-            <Gif
+          <a href="mailto:gabrielairiart.gi@gmail.com">
+            <Icon
               src="https://www.svgrepo.com/show/488179/email.svg"
               alt="Email"
             />

@@ -29,14 +29,14 @@ const Detail = () => {
     return setCharacter({});
   }, [id]);
 
-   return (
+  return (
     <DetailContainer>
       {character.name && (
         <DetailCard>
           <DetailImage src={character.image} alt="" />
           <DetailInfo>
             <TitleWrapper>
-              <h2>Name: {character.name}</h2>
+              <h2>{character.name}</h2>
             </TitleWrapper>
             <AttributeWrapper>
               <AttributeTitle>Specie:</AttributeTitle>
@@ -46,8 +46,8 @@ const Detail = () => {
               <AttributeTitle>Status:</AttributeTitle>
               <AttributeValue>{character.status}</AttributeValue>
             </AttributeWrapper>
-            <h2>{character.gender}</h2>
-            <h2>{character.origin && character.origin.name}</h2>
+            <h2>Gender: {character.gender}</h2>
+            <h2>Origin: {character.origin && character.origin.name}</h2>
           </DetailInfo>
         </DetailCard>
       )}
@@ -56,4 +56,3 @@ const Detail = () => {
 };
 
 export default Detail;
-

@@ -5,7 +5,7 @@ export const NavBar = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #292929;
+  background-color: #1d1c1c;
   padding: 10px;
   display: flex;
   justify-content: center; /* Centra horizontalmente los elementos dentro del NavBar */
@@ -24,9 +24,10 @@ export const NavContainer = styled.div`
 
 export const NavButton = styled.button`
   margin-left: 10px;
-  background-color: #97ce4c;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: #7ddb30;
+  color: #000; /* Cambiar el color del texto a negro */
+  font-size: 12px; /* Ajustar el tamaño de la fuente */
+  padding: 5px 10px; /* Ajustar el padding para hacer el botón más pequeño */
   border: none;
   border-radius: 4px;
   cursor: pointer;

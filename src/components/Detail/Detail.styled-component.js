@@ -55,4 +55,5 @@ export const AttributeTitle = styled.p`
 
 export const AttributeValue = styled.h2`
   margin: 0;
+  margin-top: 0; /* Ajustar el margen superior a 0 para eliminar el espacio entre títulos */
 `;

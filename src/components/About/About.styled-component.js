@@ -13,7 +13,7 @@ export const ProfileContainer = styled.div`
 
 export const ProfileInfo = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -48,7 +48,7 @@ export const ProfileImage = styled.img`
 export const LinksList = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 5px 0;
 `;
 
 export const LinkItem = styled.li`

@@ -5,6 +5,7 @@ import {
   CharacterName,
   CardContentWrapper,
   CharacterImage,
+  CharacterInfo,
 } from "./Card.styled-component";
 
 export default function Card({
@@ -41,10 +42,10 @@ export default function Card({
       </Link>
 
       <CardContentWrapper>
-        <CharacterName>Status: {status}</CharacterName>
-        <CharacterName>Species: {species}</CharacterName>
-        <CharacterName>Gender: {gender}</CharacterName>
-        <CharacterName>Origin: {origin}</CharacterName>
+        <CharacterInfo>Status: {status}</CharacterInfo>
+        <CharacterInfo>Species: {species}</CharacterInfo>
+        <CharacterInfo>Gender: {gender}</CharacterInfo>
+        <CharacterInfo>Origin: {origin}</CharacterInfo>
         <CharacterImage src={image} alt="" />
       </CardContentWrapper>
     </CardWrapper>

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import {
   CardWrapper,
   CloseButton,
@@ -37,9 +38,9 @@ export default function Card({
     <CardWrapper>
       <CloseButton onClick={() => onClose(id)}>X</CloseButton>
 
-      <Link to={`/detail/${id}`}>
+      <NavLink to={`/detail/${id}`}>
         <CharacterName>{name}</CharacterName>
-      </Link>
+      </NavLink>
 
       <CardContentWrapper>
         <CharacterInfo>Status: {status}</CharacterInfo>

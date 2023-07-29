@@ -14,8 +14,13 @@ export const DetailCard = styled.div`
   overflow: hidden;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
   max-width: 800px;
-  margin-top: 20px;
+  margin-top: 30px; /* Margen superior de 20px */
   border: 5px solid #ffffff;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    flex-direction: column;
+  }
 `;
 
 export const DetailInfo = styled.div`
@@ -24,6 +29,11 @@ export const DetailInfo = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    padding: 20px;
+  }
 `;
 
 export const DetailImage = styled.img`
@@ -31,6 +41,12 @@ export const DetailImage = styled.img`
   flex: 1;
   object-fit: cover;
   border-radius: 8px 0 0 8px;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -55,5 +71,9 @@ export const AttributeTitle = styled.p`
 
 export const AttributeValue = styled.h2`
   margin: 0;
-  margin-top: 0; /* Ajustar el margen superior a 0 para eliminar el espacio entre títulos */
+  margin-top: 0;
+  /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;

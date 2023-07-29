@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import SearchBar from "./../SearchBar";
+import SearchBar from "./../SearchBar/SearchBar";
 import { NavBar, NavButton, NavContainer } from "./Nav.styled-component";
 
 const Nav = ({ onSearch, onAddRandomCharacter }) => {

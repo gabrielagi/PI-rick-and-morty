@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
-  background-color: #38b3c3;
+  background-color: #fff;
   color: #ffffff;
   padding: 10px;
   margin: 20px 10px 100px 10px; /* 10px arriba, 3px derecha, 30px abajo, 5px izquierda */
@@ -25,7 +25,7 @@ export const CloseButton = styled.button`
 export const CharacterName = styled.h2`
   font-size: 20px;
   margin: 10;
-  color: #ffffff;
+  color: #1d252d;
   font-family: Roboto, sans-serif;
   font-weight: 600;
 `;
@@ -35,7 +35,7 @@ export const CharacterInfo = styled.p`
   margin: 0; /* Elimina el margen para ajustar el tamaño */
   font-family: Roboto, sans-serif;
   font-weight: 400;
-  color: #id252d;
+  color: #1d252d;
 `;
 
 export const CardContentWrapper = styled.div`
@@ -49,6 +49,6 @@ export const CharacterImage = styled.img`
   width: 220px;
   height: 220px;
   object-fit: cover;
-  border-radius: 0px 0px 8px;
+  border-radius: 0px 0px 8px 8px;
   margin-top: 10px;
 `;

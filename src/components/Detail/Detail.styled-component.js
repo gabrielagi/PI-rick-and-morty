@@ -61,11 +61,11 @@ export const TitleWrapper = styled.div`
 export const AttributeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 
 export const AttributeTitle = styled.p`
-  font-weight: bold;
+  font-weight: 300px;
   margin: 0;
 `;
 

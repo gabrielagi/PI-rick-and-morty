@@ -46,7 +46,10 @@ const Detail = () => {
               <AttributeTitle>Status:</AttributeTitle>
               <AttributeValue>{character.status}</AttributeValue>
             </AttributeWrapper>
-            <h2>Gender: {character.gender}</h2>
+            <AttributeWrapper>
+              <AttributeTitle>Gender: </AttributeTitle>
+              <AttributeValue>{character.gender}</AttributeValue>
+            </AttributeWrapper>
             <h2>Origin: {character.origin && character.origin.name}</h2>
           </DetailInfo>
         </DetailCard>

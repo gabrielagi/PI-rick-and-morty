@@ -10,7 +10,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: 
+    background:
       linear-gradient(45deg, #ff0000, #42b883, #ffffff, #ff0000),
       url(${skyrickAndMortyBackground});
     background-size: 400% 400%, cover;

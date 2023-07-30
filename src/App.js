@@ -111,7 +111,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <img id="portal-gif" src={portalGif} alt="Portal GIF" />
+
       <div className="App">
         {location.pathname !== "/" && (
           <Nav
@@ -120,7 +120,7 @@ function App() {
             logOut={logOut}
           />
         )}
-
+        <img id="portal-gif" src={portalGif} alt="Portal GIF" />
         <Routes>
           <Route path="/" element={<Form login={login} />} />
           <Route

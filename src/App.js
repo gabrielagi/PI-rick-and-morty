@@ -2,9 +2,9 @@ import "./App.css";
 import Cards from "./components/Cards/Cards.jsx";
 import Detail from "./components/Detail/Detail";
 import Nav from "./components/Nav/Nav";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
 import Error404 from "./components/Error404/Error404";
 import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
@@ -16,9 +16,14 @@ import Form from "./components/Form/Form";
 const URL_BASE = "https://rym2-production.up.railway.app/api/character";
 const API_KEY = "henrym-gabrielagi";
 
+const email = "gabriela@gmail.com";
+const password = "123asd";
+
 function App() {
   const [characters, setCharacter] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
   //------Ejercicio 1 a 6------
   //   const example = {
   //     id: 1,
@@ -37,6 +42,17 @@ function App() {
   //     setCharacter([...characters, example]);
   //   };
   //------Ejercicio 1 a 5------
+
+  const login = (userData) => {
+    if (userData.email === email && userData.password === password) {
+    }
+    setAccess(true);
+    navigate("/home");
+  };
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
 
   const existCharacter = (id) => {
     return characters.some((character) => character.id === Number(id));
@@ -100,7 +116,7 @@ function App() {
         )}
 
         <Routes>
-          <Route path="/" element={<Form />} />
+          <Route path="/" element={<Form login={login} />} />
           <Route
             path="/home"
             element={<Cards characters={characters} onClose={onClose} />}

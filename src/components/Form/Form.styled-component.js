@@ -2,22 +2,8 @@ import styled from "styled-components";
 
 export const FormContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Centrar verticalmente */
-  max-width: 600px;
-  margin: 0 auto;
-  height: 100vh;
-
-  @media screen and (max-width: 480px) {
-    padding: 20px;
-  }
-`;
-
-export const StyledForm = styled.form`
-  display: flex;
   flex-direction: column; /* Cambia la dirección a columna */
-  background-color: #ddd;
+  background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
@@ -26,7 +12,28 @@ export const StyledForm = styled.form`
   align-items: center;
   justify-content: center; /* Centrar verticalmente */
 
-  width: 50%;
+  margin: 160px auto; /* Centra el botón horizontalmente y agrega un margen superior */
+  width: 30%;
+
+  @media screen and (max-width: 480px) {
+    width: 80%;
+  }
+`;
+
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column; /* Cambia la dirección a columna */
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  padding: 20px;
+  width: 85%;
+  align-items: center;
+  justify-content: center; /* Centrar verticalmente */
+
+  margin: 0 auto; /* Centra el botón horizontalmente */
+
   @media screen and (max-width: 480px) {
     width: 80%;
   }
@@ -52,9 +59,15 @@ export const StyledInput = styled.input`
   border-radius: 4px;
   font-size: 16px;
   color: #000;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  width: 85%;
 
-  width: 100%; /* Hace que el input ocupe todo el ancho disponible */
+  /* Color de fondo verde agregado */
+  background-color: #d0ff94;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -70,5 +83,11 @@ export const StyledButton = styled.button`
 
   &:hover {
     background-color: #a4ff31;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 40%;
+
+    font-size: 15px;
   }
 `;

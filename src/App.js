@@ -18,7 +18,7 @@ const API_KEY = "henrym-gabrielagi";
 
 function App() {
   const [characters, setCharacter] = useState([]);
-  const Location = useLocation();
+  const location = useLocation();
   //------Ejercicio 1 a 6------
   //   const example = {
   //     id: 1,
@@ -92,10 +92,13 @@ function App() {
       <GlobalStyle />
       <img id="portal-gif" src={portalGif} alt="Portal GIF" />
       <div className="App">
-        <Nav
-          onSearch={onSearch}
-          onAddRandomCharacter={handleAddRandomCharacter}
-        />
+        {location.pathname !== "/" && (
+          <Nav
+            onSearch={onSearch}
+            onAddRandomCharacter={handleAddRandomCharacter}
+          />
+        )}
+
         <Routes>
           <Route path="/" element={<Form />} />
           <Route

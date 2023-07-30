@@ -1,9 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import SearchBar from "./../SearchBar/SearchBar";
-import { NavBar, NavButton, NavContainer } from "./Nav.styled-component";
+import {
+  NavBar,
+  NavButton,
+  NavContainer,
+  NavButtonLogOut,
+} from "./Nav.styled-component";
 
-const Nav = ({ onSearch, onAddRandomCharacter }) => {
+const Nav = ({ onSearch, onAddRandomCharacter, logOut }) => {
   return (
     <NavBar>
       <NavContainer>
@@ -17,6 +22,7 @@ const Nav = ({ onSearch, onAddRandomCharacter }) => {
         <NavLink to="/home">
           <NavButton>Home</NavButton>
         </NavLink>
+        <NavButtonLogOut onClick={logOut}>LogOut</NavButtonLogOut>
       </div>
     </NavBar>
   );

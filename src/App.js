@@ -50,6 +50,11 @@ function App() {
     navigate("/home");
   };
 
+  const logOut = () => {
+    setAccess(false);
+    navigate("/");
+  };
+
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
@@ -112,6 +117,7 @@ function App() {
           <Nav
             onSearch={onSearch}
             onAddRandomCharacter={handleAddRandomCharacter}
+            logOut={logOut}
           />
         )}
 

@@ -1,6 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import validation from "../Validation/Validation";
+import {
+  FormContainer,
+  StyledForm,
+  StyledButton,
+  StyledInput,
+  ErrorMsg,
+} from "./Form.styled-component";
 
 const Form = ({ login }) => {
   const [userData, setUserData] = useState({
@@ -27,26 +34,29 @@ const Form = ({ login }) => {
     event.preventDefault();
     login(userData);
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email: </label>
-      <input
-        type="text"
-        name="email"
-        value={userData.email}
-        onChange={handleChange}
-      />
-      {errors.email && <p>{errors.email}</p>}
-      <label htmlFor="password">Password: </label>
-      <input
-        type="text"
-        name="password"
-        value={userData.password}
-        onChange={handleChange}
-      />
-      {errors.password && <p>{errors.password}</p>}
-      <button>Submit</button>
-    </form>
+    <FormContainer>
+      <StyledForm onSubmit={handleSubmit}>
+        <label htmlFor="email">Email: </label>
+        <StyledInput
+          type="text"
+          name="email"
+          value={userData.email}
+          onChange={handleChange}
+        />
+        {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
+        <label htmlFor="password">Password: </label>
+        <StyledInput
+          type="text"
+          name="password"
+          value={userData.password}
+          onChange={handleChange}
+        />
+        {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
+        <StyledButton>Submit</StyledButton>
+      </StyledForm>
+    </FormContainer>
   );
 };
 

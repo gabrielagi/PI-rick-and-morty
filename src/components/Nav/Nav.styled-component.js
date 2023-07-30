@@ -34,6 +34,15 @@ export const NavButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #83d875;
+    background-color: #a4ff31;
+  }
+`;
+
+export const NavButtonLogOut = styled(NavButton)`
+  background-color: red;
+  color: #fff; /* Cambiar el color del texto a blanco */
+
+  &:hover {
+    background-color: #c20000;
   }
 `;

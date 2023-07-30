@@ -4,12 +4,13 @@ import Detail from "./components/Detail/Detail";
 import Nav from "./components/Nav/Nav";
 import { useState } from "react";
 import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import About from "./components/About/About";
 import Error404 from "./components/Error404/Error404";
 import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
 import { GlobalStyle, theme } from "./RYMBackground.styled-component";
 import portalGif from "./assets/portal-rick-and-morty.gif";
+import Form from "./components/Form/Form";
 
 //const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
 const URL_BASE = "https://rym2-production.up.railway.app/api/character";
@@ -17,7 +18,7 @@ const API_KEY = "henrym-gabrielagi";
 
 function App() {
   const [characters, setCharacter] = useState([]);
-
+  const Location = useLocation();
   //------Ejercicio 1 a 6------
   //   const example = {
   //     id: 1,
@@ -96,10 +97,7 @@ function App() {
           onAddRandomCharacter={handleAddRandomCharacter}
         />
         <Routes>
-          <Route
-            path="/"
-            element={<Cards characters={characters} onClose={onClose} />}
-          />
+          <Route path="/" element={<Form />} />
           <Route
             path="/home"
             element={<Cards characters={characters} onClose={onClose} />}

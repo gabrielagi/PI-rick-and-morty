@@ -17,7 +17,7 @@ export default function SearchBar({ onSearch }) {
           type="search"
           onChange={handleChange}
           value={id}
-          placeholder="Ingrese el ID del personaje a buscar"
+          placeholder="Ingrese el ID a buscar"
         />
         <SearchButton onClick={() => onSearch(id)}>Agregar</SearchButton>
       </SearchContainer>

@@ -50,11 +50,6 @@ function App() {
     navigate("/home");
   };
 
-  const logOut = () => {
-    setAccess(false);
-    navigate("/");
-  };
-
   useEffect(() => {
     !access && navigate("/");
   }, [access]);

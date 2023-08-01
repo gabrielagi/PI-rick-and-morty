@@ -117,7 +117,7 @@ function App() {
           <Nav
             onSearch={onSearch}
             onAddRandomCharacter={handleAddRandomCharacter}
-            logOut={logOut}
+            setAccess={setAccess}
           />
         )}
         <img id="portal-gif" src={portalGif} alt="Portal GIF" />

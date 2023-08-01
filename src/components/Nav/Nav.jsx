@@ -8,7 +8,11 @@ import {
   NavButtonLogOut,
 } from "./Nav.styled-component";
 
-const Nav = ({ onSearch, onAddRandomCharacter, logOut }) => {
+const Nav = ({ onSearch, onAddRandomCharacter, setAccess }) => {
+  const handleLogOut = () => {
+    setAccess(false);
+  };
+
   return (
     <NavBar>
       <NavContainer>
@@ -22,7 +26,7 @@ const Nav = ({ onSearch, onAddRandomCharacter, logOut }) => {
         <NavLink to="/home">
           <NavButton>Home</NavButton>
         </NavLink>
-        <NavButtonLogOut onClick={logOut}>LogOut</NavButtonLogOut>
+        <NavButtonLogOut onClick={handleLogOut}>LogOut</NavButtonLogOut>
       </div>
     </NavBar>
   );

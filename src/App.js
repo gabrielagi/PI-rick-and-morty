@@ -45,9 +45,9 @@ function App() {
 
   const login = (userData) => {
     if (userData.email === email && userData.password === password) {
-      setAccess(true);
-      navigate("/home");
     }
+    setAccess(true);
+    navigate("/home");
   };
 
   useEffect(() => {
@@ -120,10 +120,7 @@ function App() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route
-            path="/*"
-            element={access ? <Error404 /> : <Form login={login} />}
-          />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
     </ThemeProvider>

@@ -62,11 +62,7 @@ function Card({
     // </div>
 
     <CardWrapper>
-      {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button onClick={handleFavorite}>🤍</button>
-      )}
+      <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
       <CloseButton onClick={() => onClose(id)}>X</CloseButton>
 
       <NavLink to={`/detail/${id}`}>

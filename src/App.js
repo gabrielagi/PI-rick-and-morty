@@ -8,7 +8,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
 import Error404 from "./components/Error404/Error404";
 import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
-import { GlobalStyle, theme } from "./RYMBackground.styled-component";
+import { GlobalStyle, theme } from "./layout.styled-component";
 import portalGif from "./assets/portal-rick-and-morty.gif";
 import Form from "./components/Form/Form";
 
@@ -45,9 +45,9 @@ function App() {
 
   const login = (userData) => {
     if (userData.email === email && userData.password === password) {
+      setAccess(true);
+      navigate("/home");
     }
-    setAccess(true);
-    navigate("/home");
   };
 
   useEffect(() => {
@@ -84,15 +84,11 @@ function App() {
   };
 
   const handleAddRandomCharacter = () => {
-    axios("https://rickandmortyapi.com/api/character")
-      .then(({ data }) => {
-        const randomCharacter =
-          data.results[Math.floor(Math.random() * data.results.length)];
-        onAddRandomCharacter(randomCharacter);
-      })
-      .catch((error) => {
-        alert("Error fetching random character. Please try again later.");
-      });
+    axios("https://rickandmortyapi.com/api/character").then(({ data }) => {
+      const randomCharacter =
+        data.results[Math.floor(Math.random() * data.results.length)];
+      onAddRandomCharacter(randomCharacter);
+    });
   };
 
   const onAddRandomCharacter = (randomCharacter) => {
@@ -105,7 +101,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle access={access} />
 
       <div className="App">
         {location.pathname !== "/" && (
@@ -124,7 +120,10 @@ function App() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route path="*" element={<Error404 />} />
+          <Route
+            path="/*"
+            element={access ? <Error404 /> : <Form login={login} />}
+          />
         </Routes>
       </div>
     </ThemeProvider>

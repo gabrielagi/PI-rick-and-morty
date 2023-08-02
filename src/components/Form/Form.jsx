@@ -30,9 +30,21 @@ const Form = ({ login }) => {
     );
   };
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   login(userData);
+  // };
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(userData);
+    const updatedErrors = validation(userData); // Validar nuevamente antes de enviar los datos
+    setErrors(updatedErrors);
+
+    // Verificar si ambos campos están llenos antes de enviar los datos al método login
+    if (userData.email.trim() !== "" && userData.password.trim() !== "") {
+      if (Object.keys(updatedErrors).length === 0) {
+        login(userData);
+      }
+    }
   };
 
   return (

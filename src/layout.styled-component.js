@@ -1,23 +1,27 @@
 import { createGlobalStyle } from "styled-components";
-//import rickAndMortyBackground from "./assets/rick-and-morty-garage-lab.jpg";
 import skyrickAndMortyBackground from "./assets/sky-star.jpg";
+import rickAndMortyBackground from "./assets/rick-and-morty-garage-lab.jpg";
 
 export const GlobalStyle = createGlobalStyle`
-body {
+  body {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-size: 400% 400%, contain;
+    font-family: 'Arial', sans-serif;
     background:
       linear-gradient(45deg, #ff0000, #42b883, #ffffff, #ff0000),
-      url(${skyrickAndMortyBackground});
-    background-size: 400% 400%, cover;
-    font-family: 'Arial', sans-serif;
-  }
+      url(${(props) =>
+        props.access ? skyrickAndMortyBackground : rickAndMortyBackground});
 
-  #portal-gif {
+  }
+    
+ #portal-gif {
+    display: ${(props) =>
+      props.access ? "block" : "none"}; /* Mostrar solo si access es true */
     position: fixed;
     top: 50%;
     left: 50%;

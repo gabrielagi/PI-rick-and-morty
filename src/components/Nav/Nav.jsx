@@ -7,6 +7,8 @@ import {
   NavContainer,
   NavButtonLogOut,
   NavButtonFavorites,
+  NavButtonHome,
+  NavButtonAbout,
 } from "./Nav.styled-component";
 
 const Nav = ({ onSearch, onAddRandomCharacter, setAccess }) => {
@@ -22,10 +24,10 @@ const Nav = ({ onSearch, onAddRandomCharacter, setAccess }) => {
       <div>
         <NavButton onClick={onAddRandomCharacter}>Agregar Random</NavButton>
         <NavLink to="/about">
-          <NavButton>About</NavButton>
+          <NavButtonAbout>About</NavButtonAbout>
         </NavLink>
         <NavLink to="/home">
-          <NavButton>Home</NavButton>
+          <NavButtonHome>Home</NavButtonHome>
         </NavLink>
         <NavLink to="/favorites">
           <NavButtonFavorites>Favorites ❤️</NavButtonFavorites>

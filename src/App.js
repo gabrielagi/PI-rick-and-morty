@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
-import Error404 from "./components/Error404/Error404";
+//import Error404 from "./components/Error404/Error404";
 import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
 import { GlobalStyle, theme } from "./layout.styled-component";
 import portalGif from "./assets/portal-rick-and-morty.gif";

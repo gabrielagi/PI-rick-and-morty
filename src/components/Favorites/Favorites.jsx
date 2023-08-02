@@ -1,9 +1,10 @@
 import Card from "../Card/Card";
 import { connect } from "react-redux";
+import { CardsContainer } from "../Cards/Cards.styled-component";
 
 const Favorites = ({ myFavorites }) => {
   return (
-    <div>
+    <CardsContainer>
       {myFavorites?.map((fav) => {
         return (
           <Card
@@ -19,7 +20,7 @@ const Favorites = ({ myFavorites }) => {
           />
         );
       })}
-    </div>
+    </CardsContainer>
   );
 };
 

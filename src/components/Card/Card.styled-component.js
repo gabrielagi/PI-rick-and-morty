@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
   background-color: #fff;
   color: #ffffff;
   padding: 10px;
-  margin: 20px 10px 100px 10px; /* 10px arriba, 3px derecha, 30px abajo, 5px izquierda */
+  margin: 10px 10px 110px 10px; /* 10px arriba, 3px derecha, 30px abajo, 5px izquierda */
   border-radius: 8px;
   width: 200px;
   height: 300px;
@@ -14,7 +14,7 @@ export const CardWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     /* Adjust styles for screens up to 768px wide */
-    margin: 40px 10px 70px 10px;
+    margin: 40px 10px 80px 10px;
   }
 `;
 

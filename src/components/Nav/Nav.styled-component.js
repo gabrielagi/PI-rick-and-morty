@@ -40,6 +40,16 @@ export const NavButton = styled.button`
   }
 `;
 
+export const NavButtonAbout = styled(NavButton)`
+  background-color: #ffd166;
+  color: #1d252d; /* Cambiar el color del texto a blanco */
+
+  &:hover {
+    background-color: #ffe9ad;
+    box-shadow: 0 0 2px #fff, 0 0 5px #ff0, 0 0 10px #f20, 0 0 10px #f00;
+  }
+`;
+
 export const NavButtonLogOut = styled(NavButton)`
   background-color: red;
   color: #fff; /* Cambiar el color del texto a blanco */
@@ -55,5 +65,14 @@ export const NavButtonFavorites = styled(NavButton)`
 
   &:hover {
     background-color: #ffa4b2;
+  }
+`;
+
+export const NavButtonHome = styled(NavButton)`
+  background-color: #5dffde;
+  color: #1d252d; /* Cambiar el color del texto a blanco */
+
+  &:hover {
+    background-color: #3fc5ff;
   }
 `;

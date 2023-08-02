@@ -5,6 +5,12 @@ export const DetailContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 40px;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    padding: 20px;
+    margin-top: 50px;
+  }
 `;
 
 export const DetailCard = styled.div`
@@ -76,4 +82,18 @@ export const AttributeValue = styled.h2`
   @media screen and (max-width: 768px) {
     font-size: 18px;
   }
+`;
+
+export const BackButton = styled.button`
+  background-color: red;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70px;
+  height: 30px;
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 import {
   DetailContainer,
   DetailCard,
@@ -11,6 +12,7 @@ import {
   AttributeWrapper,
   AttributeTitle,
   AttributeValue,
+  BackButton,
 } from "./Detail.styled-component";
 
 const Detail = () => {
@@ -51,6 +53,9 @@ const Detail = () => {
               <AttributeValue>{character.gender}</AttributeValue>
             </AttributeWrapper>
             <h2>Origin: {character.origin && character.origin.name}</h2>
+            <NavLink to={`/home`}>
+              <BackButton>Cerrar</BackButton>
+            </NavLink>
           </DetailInfo>
         </DetailCard>
       )}

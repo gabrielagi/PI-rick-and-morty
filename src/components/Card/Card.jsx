@@ -10,6 +10,7 @@ import {
   CardContentWrapper,
   CharacterImage,
   CharacterInfo,
+  FavoriteButton,
 } from "./Card.styled-component";
 
 function Card({
@@ -62,7 +63,9 @@ function Card({
     // </div>
 
     <CardWrapper>
-      <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
+      <FavoriteButton onClick={handleFavorite}>
+        {isFav ? "❤️" : "🤍"}
+      </FavoriteButton>
       <CloseButton onClick={() => onClose(id)}>X</CloseButton>
 
       <NavLink to={`/detail/${id}`}>

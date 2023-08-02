@@ -5,9 +5,11 @@ export const NavBar = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
   background-color: #1d1c1c;
   padding: 10px;
   display: flex;
+  position: fixed;
   justify-content: center; /* Centra horizontalmente los elementos dentro del NavBar */
   align-items: center;
 

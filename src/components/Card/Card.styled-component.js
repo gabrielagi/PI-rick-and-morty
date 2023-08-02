@@ -11,6 +11,11 @@ export const CardWrapper = styled.div`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
   /* Asegura que el contenido se superponga a la imagen */
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    margin: 40px 10px 70px 10px;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -51,4 +56,12 @@ export const CharacterImage = styled.img`
   object-fit: cover;
   border-radius: 0px 0px 8px 8px;
   margin-top: 10px;
+`;
+
+export const FavoriteButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: ${(props) => (props.isFav ? "#FF1493" : "#FFF")};
 `;

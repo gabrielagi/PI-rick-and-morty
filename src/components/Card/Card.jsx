@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { addFav, removeFav } from "../../redux/action";
+import { connect } from "react-redux";
 
 import {
   CardWrapper,

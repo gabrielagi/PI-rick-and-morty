@@ -11,6 +11,7 @@ import { ThemeProvider } from "styled-components"; // Import ThemeProvider from 
 import { GlobalStyle, theme } from "./layout.styled-component";
 import portalGif from "./assets/portal-rick-and-morty.gif";
 import Form from "./components/Form/Form";
+import Favorites from "./components/Favorites/Favorites";
 
 //const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
 const URL_BASE = "https://rym2-production.up.railway.app/api/character";
@@ -98,6 +99,7 @@ function App() {
       alert("El personaje ya se está mostrando");
     }
   };
+  //<Route path="*" element={<Error404 />} />
 
   return (
     <ThemeProvider theme={theme}>
@@ -120,7 +122,7 @@ function App() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
     </ThemeProvider>

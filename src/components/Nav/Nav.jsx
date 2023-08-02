@@ -6,6 +6,7 @@ import {
   NavButton,
   NavContainer,
   NavButtonLogOut,
+  NavButtonFavorites,
 } from "./Nav.styled-component";
 
 const Nav = ({ onSearch, onAddRandomCharacter, setAccess }) => {
@@ -25,6 +26,9 @@ const Nav = ({ onSearch, onAddRandomCharacter, setAccess }) => {
         </NavLink>
         <NavLink to="/home">
           <NavButton>Home</NavButton>
+        </NavLink>
+        <NavLink to="/favorites">
+          <NavButtonFavorites>Favorites ❤️</NavButtonFavorites>
         </NavLink>
         <NavButtonLogOut onClick={handleLogOut}>LogOut</NavButtonLogOut>
       </div>

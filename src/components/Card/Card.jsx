@@ -33,7 +33,7 @@ function Card({
       removeFav(id);
     } else {
       setIsFav(true);
-      addFav({ id, name, status, species, gender, origin, image });
+      addFav({ id, name, status, species, gender, origin, image, onClose });
     }
   };
 

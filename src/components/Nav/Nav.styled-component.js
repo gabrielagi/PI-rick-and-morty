@@ -46,3 +46,12 @@ export const NavButtonLogOut = styled(NavButton)`
     background-color: #c20000;
   }
 `;
+
+export const NavButtonFavorites = styled(NavButton)`
+  background-color: #fff;
+  color: #1d252d; /* Cambiar el color del texto a blanco */
+
+  &:hover {
+    background-color: #ffa4b2;
+  }
+`;

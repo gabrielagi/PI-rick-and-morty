@@ -13,8 +13,7 @@ export const CardWrapper = styled.div`
   position: relative;
 
   @media screen and (max-width: 768px) {
-    /* Adjust styles for screens up to 768px wide */
-    margin: 40px 10px 80px 10px;
+    margin: 45px 10px 65px 10px;
   }
 `;
 

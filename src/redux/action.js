@@ -8,10 +8,10 @@ export const removeFav = (id) => {
   return { type: REMOVE_FAV, payload: id };
 };
 
-export const filter = (gender) => {
+export const filterCards = (gender) => {
   return { type: FILTER, payload: gender };
 };
 
-export const order = (order) => {
+export const orderCards = (order) => {
   return { type: ORDER, payload: order };
 };

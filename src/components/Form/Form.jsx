@@ -3,9 +3,13 @@ import { useState } from "react";
 import validation from "../Validation/Validation";
 import {
   FormContainer,
-  StyledForm,
+  FormHeading,
+  FormLabel,
+  //SocialContainer,
   StyledButton,
+  //SocialIcon,
   StyledInput,
+  //SocialButton,
   ErrorMsg,
 } from "./Form.styled-component";
 
@@ -49,25 +53,40 @@ const Form = ({ login }) => {
 
   return (
     <FormContainer>
-      <StyledForm onSubmit={handleSubmit}>
-        <label htmlFor="email">Email: </label>
-        <StyledInput
-          type="text"
-          name="email"
-          value={userData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
-        <label htmlFor="password">Password: </label>
-        <StyledInput
-          type="text"
-          name="password"
-          value={userData.password}
-          onChange={handleChange}
-        />
-        {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
-        <StyledButton>Submit</StyledButton>
-      </StyledForm>
+      <FormHeading>Iniciar Sesión</FormHeading>
+
+      <FormLabel htmlFor="email">Email</FormLabel>
+      <StyledInput
+        type="text"
+        placeholder="Email or Phone"
+        id="username"
+        name="email" // Update the name to match your state property
+        value={userData.email}
+        onChange={handleChange}
+      />
+      {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
+
+      <FormLabel htmlFor="password">Password</FormLabel>
+      <StyledInput
+        type="text"
+        placeholder="Password"
+        id="password"
+        name="password" // Update the name to match your state property
+        value={userData.password}
+        onChange={handleChange}
+      />
+      {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
+
+      <StyledButton onClick={handleSubmit}>Log In</StyledButton>
+      {/* 
+      <SocialContainer>
+        <SocialButton>
+          <SocialIcon className="fab fa-google"></SocialIcon>Google
+        </SocialButton>
+        <SocialButton marginLeft>
+          <SocialIcon className="fab fa-facebook"></SocialIcon>Facebook
+        </SocialButton>
+      </SocialContainer> */}
     </FormContainer>
   );
 };

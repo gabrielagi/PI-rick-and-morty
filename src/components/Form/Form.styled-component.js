@@ -1,93 +1,119 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column; /* Cambia la dirección a columna */
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  position: absolute;
+  width: 250px;
+  height: auto;
+  margin: auto;
+  padding: 10px;
 
-  align-items: center;
-  justify-content: center; /* Centrar verticalmente */
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 25px 35px;
+  text-align: center; /* Center-align all child elements */
+`;
 
-  margin: 160px auto; /* Centra el botón horizontalmente y agrega un margen superior */
-  width: 30%;
-
-  @media screen and (max-width: 480px) {
-    width: 80%;
+const radioactiveAnimation = keyframes`
+   0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 `;
 
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column; /* Cambia la dirección a columna */
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
+export const StyledInput = styled.input`
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  margin: 6px auto; /* Center-align the input fields horizontally */
+  box-sizing: border-box; /* Ensure proper sizing */
 
-  padding: 20px;
-  width: 85%;
-  align-items: center;
-  justify-content: center; /* Centrar verticalmente */
+  &::placeholder {
+    color: #e5e5e5;
+  }
+`;
 
-  margin: 0 auto; /* Centra el botón horizontalmente */
+export const StyledButton = styled.button`
+  margin-top: 40px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-image: linear-gradient(45deg, #29a745, #3ac162, #ffeb3b, #29a745);
+  background-size: 300% 100%;
+  transition: background 0.5s ease-in-out;
+  animation: ${radioactiveAnimation} 3s linear infinite;
 
-  @media screen and (max-width: 480px) {
-    width: 80%;
+  &:hover {
+    background-position: 100% 0;
   }
 `;
 
 export const ErrorMsg = styled.p`
   color: red;
-  margin: 0 auto; /* Centra el botón horizontalmente */
-  padding-bottom: 15px;
-
-  font-size: 13px;
-
-  @media screen and (max-width: 480px) {
-    width: 80%;
-
-    font-size: 15px;
-  }
-`;
-
-export const StyledInput = styled.input`
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #000;
-  margin-bottom: 15px;
-  width: 85%;
-
-  /* Color de fondo verde agregado */
-  background-color: #d0ff94;
-
-  @media screen and (max-width: 480px) {
-    width: 100%;
-  }
-`;
-
-export const StyledButton = styled.button`
-  background-color: #7ddb30;
-  color: #000;
   font-size: 12px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
+  margin-top: 5px;
+`;
+
+export const SocialContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+`;
+
+export const SocialButton = styled.div`
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  text-align: center;
+  margin-left: ${(props) => (props.marginLeft ? "25px" : "0")};
   cursor: pointer;
-  margin: 0 auto; /* Centra el botón horizontalmente */
-  margin-top: 15px; /* Agrega un margen superior para separar del mensaje de error */
 
   &:hover {
-    background-color: #a4ff31;
+    background-color: rgba(255, 255, 255, 0.47);
   }
+`;
 
-  @media screen and (max-width: 480px) {
-    width: 40%;
+export const SocialIcon = styled.i`
+  margin-right: 3px; /* Smaller margin-right */
+`;
 
-    font-size: 15px;
-  }
+export const FormHeading = styled.h3`
+  font-size: 24px; /* Smaller font size */
+  font-weight: 500;
+  line-height: 30px; /* Smaller line-height */
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px; /* Smaller margin-bottom */
+`;
+
+export const FormLabel = styled.label`
+  display: block;
+  margin-top: 20px; /* Smaller margin-top */
+  font-size: 14px; /* Smaller font size */
+  font-weight: 500;
+  color: #ffffff;
 `;

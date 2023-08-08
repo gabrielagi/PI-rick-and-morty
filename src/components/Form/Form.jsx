@@ -3,12 +3,13 @@ import { useState } from "react";
 import validation from "../Validation/Validation";
 import {
   FormContainer,
-  FormHeading,
+  //FormHeading,
   StyledButton,
   StyledInput,
   InputContainer,
   ErrorMsg,
 } from "./Form.styled-component";
+import loginImage from "./../../assets/login-logo.png";
 
 const Form = ({ login }) => {
   const [userData, setUserData] = useState({
@@ -50,7 +51,8 @@ const Form = ({ login }) => {
 
   return (
     <FormContainer>
-      <FormHeading>Iniciar Sesión</FormHeading>
+      <img src={loginImage} alt="Login" style={{ width: "250px" }} />
+      {/* <FormHeading>Iniciar Sesión</FormHeading> */}
 
       {/* <FormLabel htmlFor="email">Email</FormLabel> */}
       <InputContainer>

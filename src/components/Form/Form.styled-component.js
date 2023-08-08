@@ -17,6 +17,12 @@ export const FormContainer = styled.div`
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 25px 35px;
   text-align: center; /* Center-align all child elements */
+
+  img {
+    width: 100px; /* Ajusta el tamaño de la imagen según tu preferencia */
+    height: auto;
+    margin-bottom: 20px; /* Agrega un margen inferior para separar la imagen de los campos */
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -43,13 +49,17 @@ export const StyledInput = styled.input`
   font-size: 12px;
   font-weight: 300;
   color: #ffffff;
-  border: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   outline: none;
   margin: 6px auto;
   box-sizing: border-box;
 
   &::placeholder {
     color: #e5e5e5;
+  }
+
+  &:focus {
+    border-color: #ff6bd6; /* Cambia el color del borde en el foco */
   }
 `;
 

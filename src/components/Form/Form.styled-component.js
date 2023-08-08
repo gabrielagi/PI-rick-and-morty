@@ -19,7 +19,12 @@ export const FormContainer = styled.div`
   text-align: center; /* Center-align all child elements */
 `;
 
-const radioactiveAnimation = keyframes`
+export const InputContainer = styled.div`
+  margin-bottom: 32px; /* Add margin to create space between input containers */
+  position: relative;
+`;
+
+const psychedelicAnimation = keyframes`
    0% {
     background-position: 0 0;
   }
@@ -40,8 +45,8 @@ export const StyledInput = styled.input`
   color: #ffffff;
   border: none;
   outline: none;
-  margin: 6px auto; /* Center-align the input fields horizontally */
-  box-sizing: border-box; /* Ensure proper sizing */
+  margin: 6px auto;
+  box-sizing: border-box;
 
   &::placeholder {
     color: #e5e5e5;
@@ -49,7 +54,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   background-color: #ffffff;
   color: #080710;
@@ -60,45 +65,32 @@ export const StyledButton = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-  background-image: linear-gradient(45deg, #29a745, #3ac162, #ffeb3b, #29a745);
-  background-size: 300% 100%;
+  background-image: linear-gradient(
+    45deg,
+    #79fc6f,
+    #ff59e6,
+    #62ff1f,
+    #f1ff29,
+    #54ff68
+  );
+  background-size: 500% 100%;
   transition: background 0.5s ease-in-out;
-  animation: ${radioactiveAnimation} 3s linear infinite;
+  animation: ${psychedelicAnimation} 5s linear infinite;
 
   &:hover {
-    background-position: 100% 0;
+    background-color: #59fff1;
+    background-image: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+      0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.4);
+    animation: none;
   }
 `;
 
 export const ErrorMsg = styled.p`
+  position: absolute;
   color: red;
   font-size: 12px;
-  margin-top: 5px;
-`;
-
-export const SocialContainer = styled.div`
-  margin-top: 20px;
-  display: flex;
-`;
-
-export const SocialButton = styled.div`
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255, 255, 255, 0.27);
-  color: #eaf0fb;
-  text-align: center;
-  margin-left: ${(props) => (props.marginLeft ? "25px" : "0")};
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.47);
-  }
-`;
-
-export const SocialIcon = styled.i`
-  margin-right: 3px; /* Smaller margin-right */
+  margin: 0px;
 `;
 
 export const FormHeading = styled.h3`

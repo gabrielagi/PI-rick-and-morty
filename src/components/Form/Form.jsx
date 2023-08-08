@@ -4,12 +4,9 @@ import validation from "../Validation/Validation";
 import {
   FormContainer,
   FormHeading,
-  FormLabel,
-  //SocialContainer,
   StyledButton,
-  //SocialIcon,
   StyledInput,
-  //SocialButton,
+  InputContainer,
   ErrorMsg,
 } from "./Form.styled-component";
 
@@ -55,38 +52,33 @@ const Form = ({ login }) => {
     <FormContainer>
       <FormHeading>Iniciar Sesión</FormHeading>
 
-      <FormLabel htmlFor="email">Email</FormLabel>
-      <StyledInput
-        type="text"
-        placeholder="Email or Phone"
-        id="username"
-        name="email" // Update the name to match your state property
-        value={userData.email}
-        onChange={handleChange}
-      />
-      {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
+      {/* <FormLabel htmlFor="email">Email</FormLabel> */}
+      <InputContainer>
+        <StyledInput
+          type="text"
+          placeholder="Email"
+          id="username"
+          name="email" // Update the name to match your state property
+          value={userData.email}
+          onChange={handleChange}
+        />
 
-      <FormLabel htmlFor="password">Password</FormLabel>
-      <StyledInput
-        type="text"
-        placeholder="Password"
-        id="password"
-        name="password" // Update the name to match your state property
-        value={userData.password}
-        onChange={handleChange}
-      />
-      {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
+        {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
+      </InputContainer>
+      {/* <FormLabel htmlFor="password">Password</FormLabel> */}
+      <InputContainer>
+        <StyledInput
+          type="text"
+          placeholder="Password"
+          id="password"
+          name="password" // Update the name to match your state property
+          value={userData.password}
+          onChange={handleChange}
+        />
 
+        {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
+      </InputContainer>
       <StyledButton onClick={handleSubmit}>Log In</StyledButton>
-      {/* 
-      <SocialContainer>
-        <SocialButton>
-          <SocialIcon className="fab fa-google"></SocialIcon>Google
-        </SocialButton>
-        <SocialButton marginLeft>
-          <SocialIcon className="fab fa-facebook"></SocialIcon>Facebook
-        </SocialButton>
-      </SocialContainer> */}
     </FormContainer>
   );
 };

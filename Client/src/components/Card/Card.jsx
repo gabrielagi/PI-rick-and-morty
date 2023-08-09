@@ -74,9 +74,9 @@ function Card({
 
       <CardContentWrapper>
         <CharacterInfo>Status: {status}</CharacterInfo>
-        <CharacterInfo>Species: {species}</CharacterInfo>
+        {/* <CharacterInfo>Species: {species}</CharacterInfo>
         <CharacterInfo>Gender: {gender}</CharacterInfo>
-        <CharacterInfo>Origin: {origin}</CharacterInfo>
+        <CharacterInfo>Origin: {origin}</CharacterInfo> */}
         <CharacterImage src={image} alt="" />
       </CardContentWrapper>
     </CardWrapper>

@@ -1,29 +1,44 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
+  position: relative;
   background-color: #fff;
   color: #ffffff;
   padding: 10px;
-  margin: 10px 10px 110px 10px; /* 10px arriba, 3px derecha, 30px abajo, 5px izquierda */
+  margin: 10px 10px 40px 10px; /* 10px arriba, 3px derecha, 30px abajo, 5px izquierda */
   border-radius: 8px;
   width: 200px;
   height: 300px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
-  /* Asegura que el contenido se superponga a la imagen */
-  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /*Cuando agregue el boton de status reacomodar la imagen*/
+  /* position: relative; */
+  /* overflow: hidden; */
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media screen and (max-width: 768px) {
-    margin: 45px 10px 65px 10px;
+    margin: 45px 10px 15px 10px;
   }
 `;
 
 export const CloseButton = styled.button`
+  position: absolute;
+  top: 5px;
+  right: 5px;
   background-color: red;
   color: #ffffff;
   border: none;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 3px;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  border-radius: 50%; /* Para hacerlo redondo */
+  width: 23px; /* Ancho del botón */
+  height: 23px; /* Alto del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const CharacterName = styled.h2`
@@ -61,6 +76,6 @@ export const FavoriteButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
   color: ${(props) => (props.isFav ? "#FF1493" : "#FFF")};
 `;

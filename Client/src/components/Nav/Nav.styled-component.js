@@ -7,7 +7,8 @@ export const NavBar = styled.nav`
   width: 100%;
   z-index: 100;
   background-color: #1d1c1c;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
   display: flex;
   position: fixed;
   justify-content: center; /* Centra horizontalmente los elementos dentro del NavBar */

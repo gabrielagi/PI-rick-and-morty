@@ -14,8 +14,8 @@ import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
 
 //const URL_BASE = "https://rym2-production.up.railway.app/api/character/10?key=henrym-gabrielagi";
-const URL_BASE = "https://rym2-production.up.railway.app/api/character";
-const API_KEY = "henrym-gabrielagi";
+// const URL_BASE = "https://rym2-production.up.railway.app/api/character";
+// const API_KEY = "henrym-gabrielagi";
 
 const email = "gabriela@gmail.com";
 const password = "123asd";
@@ -62,7 +62,9 @@ function App() {
   const onSearch = (id) => {
     if (!existCharacter(id) || characters.length === 0) {
       //function onSearch(id) {
-      axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(
+      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+        //La que
+        //axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(
         //id es mi estado local que el usuario escribe en el input
         ({ data }) => {
           if (data.name) {

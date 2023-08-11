@@ -18,16 +18,18 @@ import {
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
-  const URL_BASE = "https://rym2-production.up.railway.app/api/character";
-  const API_KEY = "henrym-gabrielagi";
+  // const URL_BASE = "https://rym2-production.up.railway.app/api/character";
+  // const API_KEY = "henrym-gabrielagi";
   useEffect(() => {
-    axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(({ data }) => {
-      if (data.name) {
-        setCharacter(data);
-      } else {
-        window.alert("No hay personajes con ese ID");
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+      ({ data }) => {
+        if (data.name) {
+          setCharacter(data);
+        } else {
+          window.alert("No hay personajes con ese ID");
+        }
       }
-    });
+    );
     return setCharacter({});
   }, [id]);
 

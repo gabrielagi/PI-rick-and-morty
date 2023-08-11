@@ -2,18 +2,21 @@ import styled from "styled-components";
 
 export const CardWrapper = styled.div`
   position: relative;
-  background-color: #fff;
+  background-color: rgba(
+    213,
+    30,
+    248,
+    0.3
+  ); /* Usar el mismo fondo del formulario */
+  /* Verde: 39, 251, 121 Violeta:  116, 25, 117, 0.5 Azul: 	1, 56, 130*/
   color: #ffffff;
   padding: 10px;
-  margin: 10px 10px 40px 10px; /* 10px arriba, 3px derecha, 30px abajo, 5px izquierda */
+  margin: 10px 10px 40px 10px;
   border-radius: 8px;
   width: 200px;
   height: 300px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 20px 0px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  /*Cuando agregue el boton de status reacomodar la imagen*/
-  /* position: relative; */
-  /* overflow: hidden; */
 
   &:hover {
     transform: scale(1.05);
@@ -44,7 +47,7 @@ export const CloseButton = styled.button`
 export const CharacterName = styled.h2`
   font-size: 20px;
   margin: 10;
-  color: #1d252d;
+  color: #ffffff;
   font-family: Roboto, sans-serif;
   font-weight: 600;
 `;
@@ -54,7 +57,7 @@ export const CharacterInfo = styled.p`
   margin: 0; /* Elimina el margen para ajustar el tamaño */
   font-family: Roboto, sans-serif;
   font-weight: 400;
-  color: #1d252d;
+  color: #ffffff;
 `;
 
 export const CardContentWrapper = styled.div`

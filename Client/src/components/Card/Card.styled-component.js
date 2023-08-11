@@ -88,6 +88,24 @@ export const CharacterInfo = styled.p`
   color: #ffffff;
 `;
 
+export const DetailsButton = styled.button`
+  position: absolute;
+  bottom: 10px; /* Posición desde abajo */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  background-color: #1d252d;
+  color: #ffffff;
+  border: none;
+  padding: 4px 9px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #82e405;
+    background-image: none;
+  }
+`;
+
 export const CardContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,7 +119,7 @@ export const CharacterImage = styled.img`
   object-fit: cover;
   border-radius: 0px 0px 8px 8px;
   height: 62%;
-  margin-top: 12px;
+  margin-top: 14px;
 `;
 
 export const CloseButton = styled.button`

@@ -12,6 +12,7 @@ import {
   CharacterInfo,
   FavoriteButton,
   CharacterStatus,
+  DetailsButton,
 } from "./Card.styled-component";
 
 function Card({
@@ -64,16 +65,37 @@ function Card({
     // </div>
 
     <CardWrapper>
-      <FavoriteButton onClick={handleFavorite}>
+      <FavoriteButton
+        onClick={handleFavorite}
+        title={`Añadir/Quitar a ${name} de Favoritos `}
+      >
         {isFav ? "❤️" : "🤍"}
       </FavoriteButton>
-      <CloseButton onClick={() => onClose(id)}>X</CloseButton>
+      <CloseButton
+        onClick={() => onClose(id)}
+        title={`Cerrar tarjeta de ${name}`}
+        alt="Cerrar tarjeta del personaje"
+      >
+        X
+      </CloseButton>
 
-      <NavLink to={`/detail/${id}`}>
+      <NavLink
+        to={`/detail/${id}`}
+        title={`Mas información sobre ${name}`}
+        alt="Mas información sobre el personaje"
+      >
         <CharacterName>{name}</CharacterName>
       </NavLink>
 
       <CardContentWrapper>
+        <NavLink to={`/detail/${id}`}>
+          <DetailsButton
+            title={`Mas información sobre ${name}`}
+            alt="Mas información sobre el personaje"
+          >
+            +
+          </DetailsButton>
+        </NavLink>
         <CharacterStatus status={status}>{status}</CharacterStatus>
         {/* <CharacterInfo>Status: {status}</CharacterInfo> */}
         {/* <CharacterInfo>Species: {species}</CharacterInfo>

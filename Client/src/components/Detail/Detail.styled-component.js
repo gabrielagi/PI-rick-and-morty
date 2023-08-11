@@ -1,27 +1,23 @@
 import styled from "styled-components";
 
 export const DetailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
+  padding: 50px 130px 50px 130px;
 
   @media screen and (max-width: 768px) {
     /* Adjust styles for screens up to 768px wide */
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 70px;
   }
 `;
 
 export const DetailCard = styled.div`
   display: flex;
-  background-color: #312d36;
+  background-color: rgba(0, 0, 0, 0.9); /* rgba(30, 13, 58, 0.92) */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
-  max-width: 800px;
   margin-top: 30px; /* Margen superior de 20px */
-  border: 5px solid #ffffff;
+  border: 3px solid #ffffff;
 
   @media screen and (max-width: 768px) {
     /* Adjust styles for screens up to 768px wide */
@@ -43,22 +39,27 @@ export const DetailInfo = styled.div`
 `;
 
 export const DetailImage = styled.img`
-  max-width: 400px;
   flex: 1;
-  object-fit: cover;
-  border-radius: 8px 0 0 8px;
+
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
 
   @media screen and (max-width: 768px) {
-    /* Adjust styles for screens up to 768px wide */
-    max-width: 100%;
+    color: #fff;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+    max-width: 75%;
     border-radius: 8px 8px 0 0;
+    object-fit: cover;
+    border-radius: 50%;
   }
 `;
 
 export const TitleWrapper = styled.div`
-  background-color: black;
+  background-color: #8df904;
   color: white;
-  padding: 5px 10px;
+  padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
   line-height: 1.5;

@@ -1,47 +1,45 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const CardWrapper = styled.div`
-  position: relative;
-  background-color: rgba(
-    125,
-    136,
-    174,
-    0.3
-  ); /* Usar el mismo fondo del formulario */
-  /* Verde: 39, 251, 121 Violeta:  116, 25, 117, 0.5 Azul: 	1, 56, 130 Violeta-uva: 213, 30, 248, 0.3 */
-  color: #ffffff;
-  padding: 10px;
-  margin: 10px 10px 40px 10px;
-  border-radius: 8px;
-  width: 200px;
-  height: 270px;
-  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 20px 0px;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  &:hover {
-    transform: scale(1.05);
+const borderAnimation = keyframes`
+  0% {
+    border-color: #ff6bd6;
   }
-
-  @media screen and (max-width: 768px) {
-    margin: 45px 10px 15px 10px;
+  25% {
+    border-color: #8DF904;
+  }
+  50% {
+    border-color: #FF4800;
+  }
+  75% {
+    border-color: #66BDFF;
+  }
+  100% {
+    border-color: #ff6bd6;
   }
 `;
 
-export const CloseButton = styled.button`
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background-color: red;
+export const CardWrapper = styled.div`
+  position: relative;
+  background-color: rgba(30, 13, 58, 0.7);
   color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
-  border-radius: 50%; /* Para hacerlo redondo */
-  width: 23px; /* Ancho del botón */
-  height: 23px; /* Alto del botón */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  width: 200px;
+  height: 255px;
+  box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 18px 2px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  /* animation: ${borderAnimation} 5s linear infinite;  Aplica la animación al borde */
+
+  &:hover {
+    transform: scale(1.05);
+    border: 1.5px solid #8df904;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 45px 10px 0px 10px;
+  }
 `;
 
 export const CharacterName = styled.h2`
@@ -94,7 +92,7 @@ export const CardContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%; /* Ocupa todo el alto disponible en el CardWrapper */
+  height: 114%; /* Ocupa todo el alto disponible en el CardWrapper */
 `;
 
 export const CharacterImage = styled.img`
@@ -103,13 +101,33 @@ export const CharacterImage = styled.img`
   object-fit: cover;
   border-radius: 0px 0px 8px 8px;
   height: 62%;
-  margin-top: 10px;
+  margin-top: 12px;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  background-color: red;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 9px; /* Tamaño de fuente más pequeño */
+  border-radius: 50%; /* Para hacerlo redondo */
+  width: 16px; /* Ancho del botón */
+  height: 16px; /* Alto del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const FavoriteButton = styled.button`
+  position: absolute;
+  top: 2px;
+  left: 1px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   color: ${(props) => (props.isFav ? "#FF1493" : "#FFF")};
 `;

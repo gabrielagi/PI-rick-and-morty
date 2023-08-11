@@ -3,18 +3,18 @@ import styled from "styled-components";
 export const CardWrapper = styled.div`
   position: relative;
   background-color: rgba(
-    213,
-    30,
-    248,
+    125,
+    136,
+    174,
     0.3
   ); /* Usar el mismo fondo del formulario */
-  /* Verde: 39, 251, 121 Violeta:  116, 25, 117, 0.5 Azul: 	1, 56, 130*/
+  /* Verde: 39, 251, 121 Violeta:  116, 25, 117, 0.5 Azul: 	1, 56, 130 Violeta-uva: 213, 30, 248, 0.3 */
   color: #ffffff;
   padding: 10px;
   margin: 10px 10px 40px 10px;
   border-radius: 8px;
   width: 200px;
-  height: 300px;
+  height: 270px;
   box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 20px 0px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -45,11 +45,41 @@ export const CloseButton = styled.button`
 `;
 
 export const CharacterName = styled.h2`
-  font-size: 20px;
-  margin: 10;
-  color: #ffffff;
-  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  margin: 10px;
+  color: #08bae3;
+  font-family: "Get Schwifty", Roboto, sans-serif;
   font-weight: 600;
+  -webkit-text-stroke: 0.01px #fff765;
+  /* Muestra un efecto de puntos suspensivos cuando el titulo es largo(...) */
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`;
+const statusColors = {
+  Alive: { color: "#8DF904", background: "rgba(	109, 255, 194, 0.1)" },
+  Dead: { color: "#FF4800", background: "rgba(255, 0, 0, 0.15)" },
+  unknown: { color: "#66BDFF", background: "rgba(7, 48, 140, 0.4)" },
+  default: { color: "#ffffff", background: "rgba(255, 255, 255, 0.2)" },
+};
+
+export const CharacterStatus = styled.p`
+  font-size: 11px;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: ${({ status }) =>
+    statusColors[status]?.color || statusColors.default.color};
+
+  /* Nuevo estilo para el recuadro */
+  padding: 4px 8px; /* Espaciado interno */
+  background-color: ${({ status }) =>
+    statusColors[status]?.background || statusColors.default.background};
+  border: 1px solid
+    ${({ status }) => statusColors[status]?.color || statusColors.default.color};
+  border-radius: 4px;
+  margin-left: auto; /* Titulo lado derecho */
 `;
 
 export const CharacterInfo = styled.p`
@@ -72,6 +102,7 @@ export const CharacterImage = styled.img`
   height: 220px;
   object-fit: cover;
   border-radius: 0px 0px 8px 8px;
+  height: 62%;
   margin-top: 10px;
 `;
 

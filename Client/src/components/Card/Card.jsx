@@ -11,6 +11,7 @@ import {
   CharacterImage,
   CharacterInfo,
   FavoriteButton,
+  CharacterStatus,
 } from "./Card.styled-component";
 
 function Card({
@@ -73,7 +74,8 @@ function Card({
       </NavLink>
 
       <CardContentWrapper>
-        <CharacterInfo>Status: {status}</CharacterInfo>
+        <CharacterStatus status={status}>{status}</CharacterStatus>
+        {/* <CharacterInfo>Status: {status}</CharacterInfo> */}
         {/* <CharacterInfo>Species: {species}</CharacterInfo>
         <CharacterInfo>Gender: {gender}</CharacterInfo>
         <CharacterInfo>Origin: {origin}</CharacterInfo> */}

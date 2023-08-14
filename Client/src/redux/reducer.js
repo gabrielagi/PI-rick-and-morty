@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
         myFavorites:
           action.payload === "A"
             ? allFavCharactersCopy.sort((a, b) => a.id - b.id)
-            : allFavCharactersCopy.sort((a, b) => a.id - b.id),
+            : allFavCharactersCopy.sort((a, b) => b.id - a.id),
       };
 
     default:

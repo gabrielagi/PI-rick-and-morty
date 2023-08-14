@@ -39,7 +39,7 @@ export const CardWrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin: 45px 10px 0px 10px;
+    margin: 45px 10px 5px 10px;
   }
 `;
 

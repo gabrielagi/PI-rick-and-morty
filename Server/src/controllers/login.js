@@ -9,7 +9,7 @@ const login = (req, res) => {
 
   return userFound
     ? res.status(200).json({ access: true })
-    : res.status(200).json({ access: false });
+    : res.status(404).json({ access: false });
 };
 
 module.exports = { login };

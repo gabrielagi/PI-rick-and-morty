@@ -1,11 +1,11 @@
 const { login } = require("../controllers/login");
-const { getCharacterById } = require("../controllers/getCharById");
+const { getCharById } = require("../controllers/getCharById");
 const { postFav, deleteFav } = require("../controllers/handleFavorites");
 
 const router = require("express").Router();
 
 router.get("/character/:id", (req, res) => {
-  getCharacterById(req, res);
+  getCharById(req, res);
 });
 
 //router.get("/login", login);

@@ -54,7 +54,9 @@ const Detail = () => {
               <AttributeTitle>Gender: </AttributeTitle>
               <AttributeValue>{character.gender}</AttributeValue>
             </AttributeWrapper>
-            <h2>Origin: {character.origin && character.origin.name}</h2>
+            <AttributeValue>
+              Origin: {character.origin && character.origin.name}
+            </AttributeValue>
             <NavLink to={`/home`}>
               <BackButton>Cerrar</BackButton>
             </NavLink>

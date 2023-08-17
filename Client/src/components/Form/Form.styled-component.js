@@ -16,7 +16,26 @@ export const FormContainer = styled.div`
   border: 2px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 25px 35px;
-  text-align: center; /* Center-align all child elements */
+  text-align: center;
+
+  width: 200px;
+  padding: 20px 25px;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    width: 250px;
+    padding: 20px 25px;
+  }
+`;
+
+export const LoginImage = styled.img`
+  display: block;
+  margin: 0;
+  width: 205px;
+
+  @media screen and (max-width: 768px) {
+    width: 250px;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -24,23 +43,14 @@ export const InputContainer = styled.div`
   position: relative;
 `;
 
-const psychedelicAnimation = keyframes`
-   0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-`;
-
 export const StyledInput = styled.input`
   display: block;
-  height: 40px;
+  height: 32px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
   padding: 8px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 300;
   color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -55,6 +65,35 @@ export const StyledInput = styled.input`
   &:focus {
     border-color: #ff6bd6; /* Cambia el color del borde en el foco */
   }
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    height: 40px;
+    font-size: 12px;
+  }
+`;
+
+export const ErrorMsg = styled.p`
+  position: absolute;
+  color: red;
+  font-size: 10px;
+  margin: 0px;
+
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    width: 250px;
+    padding: 0px;
+    font-size: 13px;
+  }
+`;
+
+const psychedelicAnimation = keyframes`
+   0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -62,8 +101,8 @@ export const StyledButton = styled.button`
   width: 100%;
   background-color: #ffffff;
   color: #080710;
-  padding: 12px 0;
-  font-size: 16px;
+  padding: 10px 0;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
@@ -88,28 +127,11 @@ export const StyledButton = styled.button`
       0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.4);
     animation: none;
   }
-`;
 
-export const ErrorMsg = styled.p`
-  position: absolute;
-  color: red;
-  font-size: 12px;
-  margin: 0px;
-`;
-
-export const FormHeading = styled.h3`
-  font-size: 24px; /* Smaller font size */
-  font-weight: 500;
-  line-height: 30px; /* Smaller line-height */
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 20px; /* Smaller margin-bottom */
-`;
-
-export const FormLabel = styled.label`
-  display: block;
-  margin-top: 20px; /* Smaller margin-top */
-  font-size: 14px; /* Smaller font size */
-  font-weight: 500;
-  color: #ffffff;
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px wide */
+    width: 250px;
+    padding: 12px;
+    font-size: 16px;
+  }
 `;

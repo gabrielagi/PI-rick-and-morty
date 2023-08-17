@@ -58,27 +58,25 @@ function App() {
     !access && navigate("/");
   }, [access]);
 
-  const existCharacter = (id) => {
-    return characters.some((character) => character.id === Number(id));
+  const isCharacterDuplicate = (id) => {
+    return characters.some((character) => character.id === id);
   };
 
   const onSearch = (id) => {
-    if (!existCharacter(id) || characters.length === 0) {
-      //function onSearch(id) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-        //La que
-        //axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(
-        //id es mi estado local que el usuario escribe en el input
-        ({ data }) => {
+    if (!isCharacterDuplicate(id)) {
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+        .then(({ data }) => {
           if (data.name) {
             setCharacter((oldChars) => [...oldChars, data]);
           } else {
             alert("¡No hay personajes con este ID!");
           }
-        }
-      );
+        })
+        .catch((error) => {
+          alert("Ocurrió un error al buscar el personaje.");
+        });
     } else {
-      alert("El personaje ya se esta mostrando");
+      alert("El personaje ya se está mostrando");
     }
   };
 
@@ -98,13 +96,12 @@ function App() {
   };
 
   const onAddRandomCharacter = (randomCharacter) => {
-    if (!existCharacter(randomCharacter.id)) {
+    if (!isCharacterDuplicate(randomCharacter.id)) {
       setCharacter((oldChars) => [...oldChars, randomCharacter]);
     } else {
       alert("El personaje ya se está mostrando");
     }
   };
-  //<Route path="*" element={<Error404 />} />
 
   return (
     <ThemeProvider theme={theme}>

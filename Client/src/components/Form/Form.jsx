@@ -3,7 +3,7 @@ import { useState } from "react";
 import validation from "../Validation/Validation";
 import {
   FormContainer,
-  //FormHeading,
+  LoginImage,
   StyledButton,
   StyledInput,
   InputContainer,
@@ -32,10 +32,6 @@ const Form = ({ login }) => {
     );
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   login(userData);
-  // };
   const handleSubmit = (event) => {
     event.preventDefault();
     const updatedErrors = validation(userData); // Validar nuevamente antes de enviar los datos
@@ -51,7 +47,7 @@ const Form = ({ login }) => {
 
   return (
     <FormContainer>
-      <img src={loginImage} alt="Login" style={{ width: "250px" }} />
+      <LoginImage src={loginImage} alt="Login" />
       {/* <FormHeading>Iniciar Sesión</FormHeading> */}
 
       {/* <FormLabel htmlFor="email">Email</FormLabel> */}

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DetailContainer = styled.div`
-  padding: 50px 130px 50px 130px;
+  padding: 20px 130px 50px 130px;
 
   @media screen and (max-width: 768px) {
     /* Adjust styles for screens up to 768px wide */
@@ -40,7 +40,6 @@ export const DetailInfo = styled.div`
 
 export const DetailImage = styled.img`
   flex: 1;
-
   flex-direction: column;
   justify-content: center; /* Centrar verticalmente */
 
@@ -63,6 +62,12 @@ export const TitleWrapper = styled.div`
   border-radius: 5px;
   margin-bottom: 10px;
   line-height: 1.5;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    padding: 0px;
+    font-size: 18px;
+  }
 `;
 
 export const AttributeWrapper = styled.div`
@@ -74,14 +79,20 @@ export const AttributeWrapper = styled.div`
 export const AttributeTitle = styled.p`
   font-weight: 300px;
   margin: 0;
+  font-size: 12px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const AttributeValue = styled.h2`
   margin: 0;
   margin-top: 0;
-  /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  font-size: 22px;
+
   @media screen and (max-width: 768px) {
-    font-size: 18px;
+    font-size: 25px;
   }
 `;
 
@@ -97,4 +108,8 @@ export const BackButton = styled.button`
   margin-bottom: 10px;
   width: 70px;
   height: 30px;
+  @media screen and (max-width: 768px) {
+    margin-top: 25px;
+    margin-bottom: 2px;
+  }
 `;

@@ -26,8 +26,8 @@ export const CardWrapper = styled.div`
   /* Arriba | Derecha | Abajo | Izquierda */
   margin: 25px 15px 0 15px;
   border-radius: 8px;
-  width: 200px;
-  height: 255px;
+  width: 170px;
+  height: 220px;
   box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 18px 2px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;

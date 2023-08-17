@@ -4,5 +4,5 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 60px;
-  justify-content: center; /* Optional: adjust the alignment of cards */
+  justify-content: center; 
 `;

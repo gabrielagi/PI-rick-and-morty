@@ -45,5 +45,8 @@ https://github.com/gabrielagi/PI-rick-and-morty/assets/48634426/0e7769d0-42c3-4b
 -   Inicia el servidor backend: npm run start:backend
 -   Inicia la aplicación frontend: npm run start:frontend
 -   Abre tu navegador en: http://localhost:3000
+
+
+<br />
 <br />
 ¡Espero que disfrutes explorando mi proyecto tanto como disfrute creándolo! Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o ponerte en contacto. ¡Diviértete explorando el universo de Rick and Morty! 🚀

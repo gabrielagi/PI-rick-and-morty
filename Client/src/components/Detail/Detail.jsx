@@ -40,7 +40,7 @@ const Detail = () => {
           <DetailImage src={character.image} alt="" />
           <DetailInfo>
             <TitleWrapper>
-              <h2>{character.name}</h2>
+              <h1>{character.name}</h1>
             </TitleWrapper>
             <AttributeWrapper>
               <AttributeTitle>Specie:</AttributeTitle>

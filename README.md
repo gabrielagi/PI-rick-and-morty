@@ -36,14 +36,14 @@ https://github.com/gabrielagi/PI-rick-and-morty/assets/48634426/0e7769d0-42c3-4b
 
 <br />
 ## Instrucciones de Configuración`
-1. Clona este repositorio: git clone https://github.com/tuusuario/rick-and-morty.git
-2. Navega a la carpeta del proyecto: cd rick-and-morty
-3. Instala las dependencias del frontend: cd frontend && npm install
-4. Instala las dependencias del backend: cd backend && npm install
-5. Configura la base de datos en backend/config/database.js
-6. Ejecuta las migraciones de la base de datos: npm run migrate
-7. Inicia el servidor backend: npm run start:backend
-8. Inicia la aplicación frontend: npm run start:frontend
-9. Abre tu navegador en: http://localhost:3000
-
+- Clona este repositorio: git clone https://github.com/tuusuario/rick-and-morty.git
+-  Navega a la carpeta del proyecto: cd rick-and-morty
+-   Instala las dependencias del frontend: cd frontend && npm install
+-   Instala las dependencias del backend: cd backend && npm install
+-   Configura la base de datos en backend/config/database.js
+-   Ejecuta las migraciones de la base de datos: npm run migrate
+-   Inicia el servidor backend: npm run start:backend
+-   Inicia la aplicación frontend: npm run start:frontend
+-   Abre tu navegador en: http://localhost:3000
+<br />
 ¡Espero que disfrutes explorando mi proyecto tanto como disfrute creándolo! Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o ponerte en contacto. ¡Diviértete explorando el universo de Rick and Morty! 🚀

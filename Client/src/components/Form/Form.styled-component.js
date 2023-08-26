@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 export const FormContainer = styled.div`
   position: absolute;
-  width: 250px;
+  width: 300px;
   height: auto;
   margin: auto;
-  padding: 10px;
+  padding: 35px 45px;
 
   transform: translate(-50%, -50%);
   left: 49%;
@@ -15,23 +15,21 @@ export const FormContainer = styled.div`
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  padding: 25px 35px;
+
   text-align: center;
 
-  width: 200px;
-  padding: 20px 25px;
-
   @media screen and (max-width: 768px) {
-    /* Adjust styles for screens up to 768px wide */
     width: 250px;
-    padding: 20px 25px;
+    padding: 30px 40px;
+    top: 45%;
   }
 `;
 
 export const LoginImage = styled.img`
   display: block;
   margin: 0;
-  width: 205px;
+  width: 300px;
+  margin-bottom: 15px;
 
   @media screen and (max-width: 768px) {
     width: 250px;
@@ -39,23 +37,23 @@ export const LoginImage = styled.img`
 `;
 
 export const InputContainer = styled.div`
-  margin-bottom: 32px; /* Add margin to create space between input containers */
+  margin-bottom: 40px;
   position: relative;
 `;
 
 export const StyledInput = styled.input`
   display: block;
-  height: 32px;
+  height: 45px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
-  padding: 8px;
-  font-size: 10px;
+  padding: 10px;
+  font-size: 16px;
   font-weight: 300;
   color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.1);
   outline: none;
-  margin: 6px auto;
+  margin: 5px auto;
   box-sizing: border-box;
 
   &::placeholder {
@@ -63,27 +61,25 @@ export const StyledInput = styled.input`
   }
 
   &:focus {
-    border-color: #ff6bd6; /* Cambia el color del borde en el foco */
+    border-color: #ff6bd6;
   }
 
   @media screen and (max-width: 768px) {
-    /* Adjust styles for screens up to 768px wide */
-    height: 40px;
-    font-size: 12px;
+    height: 45px;
+    font-size: 14px;
   }
 `;
 
 export const ErrorMsg = styled.p`
   position: absolute;
   color: red;
-  font-size: 10px;
+  font-size: 14px;
   margin: 0px;
 
   @media screen and (max-width: 768px) {
-    /* Adjust styles for screens up to 768px wide */
     width: 250px;
     padding: 0px;
-    font-size: 13px;
+    font-size: 14px;
   }
 `;
 
@@ -101,8 +97,8 @@ export const StyledButton = styled.button`
   width: 100%;
   background-color: #ffffff;
   color: #080710;
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 16px 0;
+  font-size: 18px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
@@ -129,9 +125,8 @@ export const StyledButton = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    /* Adjust styles for screens up to 768px wide */
     width: 250px;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
   }
 `;

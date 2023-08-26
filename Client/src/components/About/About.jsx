@@ -4,6 +4,7 @@ import {
   ProfileInfo,
   ProfileImage,
   GifWrapper,
+  ProfileText,
   Icon,
   LinksList,
 } from "./About.styled-component";
@@ -16,14 +17,14 @@ const About = () => {
           src="https://avatars.githubusercontent.com/u/48634426?s=400&u=a8e43bd90c72385e8e7cc5b1e3f3cf9b2ba34f2f&v=4"
           alt="Gif 1"
         />
-        <h3>Gabriela Iriart</h3>
-        <p>
+        <h2>Gabriela Iriart</h2>
+        <ProfileText>
           ¡Hola! Soy una desarrolladora de software Full Stack apasionada por
           crear soluciones tecnológicas innovadoras que mejoren la experiencia
           del usuario, enfocada en el diseño centrado en el usuario y la
           usabilidad, buscando el equilibrio perfecto entre funcionalidad y
           estética en cada proyecto.
-        </p>
+        </ProfileText>
         <GifWrapper>
           {/* <Icon
             src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif"

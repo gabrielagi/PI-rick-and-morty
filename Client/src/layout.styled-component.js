@@ -24,9 +24,9 @@ export const GlobalStyle = createGlobalStyle`
       props.access ? "block" : "none"}; /* Mostrar solo si access es true */
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 47%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 440px;
     z-index: -2;
     opacity: 0.8;
   }

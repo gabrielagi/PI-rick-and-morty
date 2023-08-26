@@ -39,10 +39,11 @@ export const CardsContainer = styled.div`
 `;
 
 export const CustomSelect = styled.select`
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 14px;
+  padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 40px 15px 0 15px;
 
   &:hover {
     background-color: #dae1e5;

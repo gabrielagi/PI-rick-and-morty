@@ -4,10 +4,15 @@ Este es el repositorio oficial para mi proyecto integrador inspirado en la popul
 
 ## Demo Video
 
-¡Echa un vistazo a nuestra presentación en video para obtener una vista previa rápida de nuestro proyecto! Ver Video de Presentación
+¡Echa un vistazo a la presentación en video para obtener una vista previa rápida de nuestro proyecto!
+
+
+
+https://github.com/gabrielagi/PI-rick-and-morty/assets/48634426/0e7769d0-42c3-4bb5-a6df-308ebe28c782
+
+
 
 <br />
-## Tecnologías Utilizadas: 
 
 ### Frontend:
 - React

@@ -7,7 +7,7 @@ import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
 //import Error404 from "./components/Error404/Error404";
-import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
+import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "./layout.styled-component";
 import portalGif from "./assets/portal-rick-and-morty.gif";
 import Form from "./components/Form/Form";
@@ -17,66 +17,52 @@ import Favorites from "./components/Favorites/Favorites";
 // const URL_BASE = "https://rym2-production.up.railway.app/api/character";
 // const API_KEY = "henrym-gabrielagi";
 
-const email = "gabriela@gmail.com";
-const password = "123asd";
+const URL = "http://localhost:3001/rickandmorty/login/";
 
 function App() {
   const [characters, setCharacter] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  //------Ejercicio 1 a 6------
-  //   const example = {
-  //     id: 1,
-  //     name: "Rick Sanchez",
-  //     status: "Alive",
-  //     species: "Human",
-  //     gender: "Male",
-  //     origin: {
-  //       name: "Earth (C-137)",
-  //       url: "https://rickandmortyapi.com/api/location/1",
-  //     },
-  //     image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-  //   };
 
-  //   const onSearch = () => {
-  //     setCharacter([...characters, example]);
-  //   };
-  //------Ejercicio 1 a 5------
-
-  const login = (userData) => {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  const login = async (userData) => {
+    try {
+      const { email, password } = userData;
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
       const { access } = data;
       setAccess(access);
       access && navigate("/home");
-    });
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
-
   const isCharacterDuplicate = (id) => {
     return characters.some((character) => character.id === id);
   };
 
-  const onSearch = (id) => {
-    if (!isCharacterDuplicate(id)) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
-        .then(({ data }) => {
-          if (data.name) {
+  const onSearch = async (id) => {
+    try {
+      if (!isCharacterDuplicate(id)) {
+        const { data } = await axios(
+          `http://localhost:3001/rickandmorty/character/${id}`
+        );
+        if (data.name) {
+          // Verificar si el personaje ya está en la lista antes de agregarlo
+          if (!isCharacterDuplicate(data.id)) {
             setCharacter((oldChars) => [...oldChars, data]);
           } else {
-            alert("¡No hay personajes con este ID!");
+            alert("El personaje ya se está mostrando");
           }
-        })
-        .catch((error) => {
-          alert("Ocurrió un error al buscar el personaje.");
-        });
-    } else {
-      alert("El personaje ya se está mostrando");
+        }
+      }
+    } catch (error) {
+      alert("¡No hay personajes con este ID!");
     }
   };
 
@@ -87,19 +73,26 @@ function App() {
     setCharacter(filteredCharacters);
   };
 
-  const handleAddRandomCharacter = () => {
-    axios("https://rickandmortyapi.com/api/character").then(({ data }) => {
+  const handleAddRandomCharacter = async () => {
+    try {
+      const { data } = await axios("https://rickandmortyapi.com/api/character");
       const randomCharacter =
         data.results[Math.floor(Math.random() * data.results.length)];
-      onAddRandomCharacter(randomCharacter);
-    });
+      await onAddRandomCharacter(randomCharacter);
+    } catch (error) {
+      console.error("Error al obtener personaje aleatorio:", error);
+    }
   };
 
-  const onAddRandomCharacter = (randomCharacter) => {
-    if (!isCharacterDuplicate(randomCharacter.id)) {
-      setCharacter((oldChars) => [...oldChars, randomCharacter]);
-    } else {
-      alert("El personaje ya se está mostrando");
+  const onAddRandomCharacter = async (randomCharacter) => {
+    try {
+      if (!isCharacterDuplicate(randomCharacter.id)) {
+        setCharacter((oldChars) => [...oldChars, randomCharacter]);
+      } else {
+        alert("El personaje ya se está mostrando");
+      }
+    } catch (error) {
+      console.error("Error al agregar personaje aleatorio:", error);
     }
   };
 

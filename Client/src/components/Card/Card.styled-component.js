@@ -24,7 +24,7 @@ export const CardWrapper = styled.div`
   color: #ffffff;
   padding: 10px;
   /* Arriba | Derecha | Abajo | Izquierda */
-  margin: 25px 15px 0 15px;
+  margin: 55px 15px 5px 15px;
   border-radius: 8px;
   width: 170px;
   height: 220px;
@@ -39,7 +39,8 @@ export const CardWrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin: 45px 10px 5px 10px;
+    margin: 70px 10px 0px 10px;
+    padding: 20px;
   }
 `;
 

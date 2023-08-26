@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/action";
 
@@ -9,7 +9,6 @@ import {
   CharacterName,
   CardContentWrapper,
   CharacterImage,
-  CharacterInfo,
   FavoriteButton,
   CharacterStatus,
   DetailsButton,
@@ -48,22 +47,10 @@ function Card({
     });
   }, [myFavorites]);
 
+  const location = useLocation();
+  const isOnFavoritesPage = location.pathname === "/favorites";
+
   return (
-    // <div>
-    //   <button onClick={() => onClose(id)}>X</button>
-
-    //   <Link to={`/detail/${id}`}>
-    //     <h2>{name}</h2>
-    //   </Link>
-
-    //   {/* <h2>{name}</h2> */}
-    //   <h2>{status}</h2>
-    //   <h2>{species}</h2>
-    //   <h2>{gender}</h2>
-    //   <h2>{origin}</h2>
-    //   <img src={image} alt="" />
-    // </div>
-
     <CardWrapper>
       <FavoriteButton
         onClick={handleFavorite}
@@ -71,13 +58,15 @@ function Card({
       >
         {isFav ? "❤️" : "🤍"}
       </FavoriteButton>
-      <CloseButton
-        onClick={() => onClose(id)}
-        title={`Cerrar tarjeta de ${name}`}
-        alt="Cerrar tarjeta del personaje"
-      >
-        X
-      </CloseButton>
+      {!isOnFavoritesPage && (
+        <CloseButton
+          onClick={() => onClose(id)}
+          title={`Cerrar tarjeta de ${name}`}
+          alt="Cerrar tarjeta del personaje"
+        >
+          X
+        </CloseButton>
+      )}
 
       <NavLink
         to={`/detail/${id}`}

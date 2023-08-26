@@ -6,10 +6,11 @@ export const NavBar = styled.nav`
   width: 100%;
   z-index: 100;
   background-color: #080a09;
-  padding: 8px 0px;
+  padding: 3px 0px;
   display: flex;
-  justify-content: space-between; /* Alineación entre elementos */
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -19,58 +20,71 @@ export const NavBar = styled.nav`
 export const NavContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 0px 20px 0px 40px;
+}
 `;
 
 export const NavButton = styled.button`
-  margin-left: 10px;
-  background-color: #a4ff31;
-  color: #000;
-  font-size: 10px;
-  padding: 3px 8px;
-  border: none;
-  border-radius: 4px 0px 4px 0px;
+  margin: 5px 15px 0px;
+  background-color: transparent;
+  color: #39ff14;
+  font-size: 12px;
+  padding: 6px 18px;
+  border: 1px solid #39ff14;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #7ddb30;
+  &:active,
+  &:focus {
+    border: 1px solid #ff44cc;
+    color: #ff44cc;
+    box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.5);
   }
 `;
 
 export const NavButtonAbout = styled(NavButton)`
-  background-color: #ffd166;
-  color: #1d252d;
-
-  &:hover {
-    background-color: #ffe9ad;
-    box-shadow: 0 0 2px #fff, 0 0 5px #ff0, 0 0 10px #f20, 0 0 10px #f00;
+  font-family: Roboto, sans-serif;
+  @media screen and (min-width: 768px) {
+    margin: 5px 40px;
   }
 `;
 
 export const NavButtonLogOut = styled(NavButton)`
   background-color: red;
   color: #fff;
-  margin-right: 10px;
+  margin-right: 30px;
+  margin: 5px 80px;
+  border: none;
 
   &:hover {
     background-color: #c20000;
+
+    box-shadow: none;
+    border: none;
+    color: #fff;
+  }
+`;
+
+export const NavButtonRandom = styled(NavButton)`
+  border: 1px solid #ff44cc;
+  color: #ff44cc;
+  &:hover {
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.5);
   }
 `;
 
 export const NavButtonFavorites = styled(NavButton)`
-  background-color: #fff;
-  color: #1d252d;
-
   &:hover {
     background-color: #ffa4b2;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 10px;
   }
 `;
 
 export const NavButtonHome = styled(NavButton)`
-  background-color: #5dffde;
-  color: #1d252d;
-
-  &:hover {
-    background-color: #3fc5ff;
-  }
+  font-family: Roboto, sans-serif;
 `;
